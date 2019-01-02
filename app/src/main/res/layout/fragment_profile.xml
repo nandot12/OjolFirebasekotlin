@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".profile.ProfileFragment">
+
+    <FrameLayout android:layout_width="match_parent"
+                 android:id="@+id/frame"
+                 android:background="@drawable/city"
+                 android:layout_height="200dp">
+
+        <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="100dp"
+                android:src="@drawable/profile"
+                android:layout_gravity="center|bottom"
+                android:scaleType="fitXY"
+                android:layout_height="100dp"
+
+        />
+    </FrameLayout>
+
+    <TextView
+            android:id="@+id/fullname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@android:color/black"
+            android:layout_below="@+id/frame"
+            android:text="Nama Lengkap"/>
+
+    <TextView
+            android:id="@+id/profileName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fullname"
+            android:layout_marginLeft="40dp"
+            android:text="Nando septian husni"
+    />
+
+    <View
+            android:id="@+id/frameview"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/profileName"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/darker_gray"/>
+
+
+    <TextView
+            android:id="@+id/fullEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@android:color/black"
+            android:layout_below="@+id/frameview"
+            android:text="Email"/>
+
+    <TextView
+            android:id="@+id/profilEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fullEmail"
+            android:layout_marginLeft="40dp"
+            android:text="Nando septian husni"
+    />
+
+    <View
+            android:id="@+id/viewframe2"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/profilEmail"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/darker_gray"/>
+
+    <TextView
+            android:id="@+id/fullHp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@android:color/black"
+            android:layout_below="@+id/viewframe2"
+            android:text="Email"/>
+
+    <TextView
+            android:id="@+id/profilhp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fullHp"
+            android:layout_marginLeft="40dp"
+            android:text="Nando septian husni"
+    />
+
+    <View
+            android:id="@+id/viewframe22"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/profilhp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/darker_gray"/>
+
+    <Button android:id="@+id/profileSignout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/viewframe22"
+            android:layout_marginRight="40dp"
+            android:text="Sign Out"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:layout_marginLeft="40dp"
+            android:background="@color/colorPrimary"
+
+    />
+</RelativeLayout>

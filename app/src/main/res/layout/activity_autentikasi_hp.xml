@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        tools:context=".auth.AutentikasiHpActivity">
+
+
+    <EditText
+            android:id="@+id/authentikasinomorhp"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:layout_marginLeft="20dp"
+            android:textSize="15sp"
+            android:inputType="number"
+            android:textColorHint="@android:color/black"
+            android:background="@drawable/background"
+            android:layout_marginRight="20dp"
+            android:layout_centerInParent="true"
+            android:hint="@string/input_nomor_hp"
+            android:importantForAutofill="no"/>
+
+
+    <TextView
+            android:id="@+id/authentikasisubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:text="@string/submit"
+            android:layout_below="@id/authentikasinomorhp"
+    />
+
+</RelativeLayout>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+    <com.google.android.gms.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_below="@+id/c"
+            android:layout_above="@+id/homebottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    <android.support.v7.widget.CardView
+            android:id="@+id/c"
+            android:elevation="5dp"
+            app:cardCornerRadius="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:background="@android:color/white">
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:padding="10dp"
+                          android:orientation="horizontal">
+
+
+                <ImageView android:layout_width="20dp"
+                           android:layout_height="20dp"
+                           android:src="@drawable/ic_pin1"/>
+
+                <TextView
+                        android:id="@+id/homeAwal"
+                        android:layout_width="match_parent"
+                        android:hint="Dari mana ?"
+                        android:lines="2"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="15sp"
+                        android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <View android:layout_width="match_parent"
+                  android:layout_height="0.5dp"
+                  android:layout_marginLeft="40dp"
+                  android:background="@android:color/darker_gray"/>
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:padding="10dp"
+                          android:orientation="horizontal">
+
+
+                <ImageView android:layout_width="20dp"
+                           android:layout_height="20dp"
+                           android:src="@drawable/ic_pin2"/>
+
+                <TextView
+                        android:id="@+id/homeTujuan"
+                        android:lines="2"
+                        android:layout_width="match_parent"
+                        android:hint="Mau Kemana ?"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="15sp"
+                        android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+            android:id="@+id/homebottom"
+            android:layout_above="@+id/homebuttonnext"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content">
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                     android:padding="4dp"
+                      android:orientation="vertical">
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content">
+
+
+                <ImageView android:layout_width="25dp"
+                           android:layout_height="25dp"
+                           android:layout_marginTop="5dp"
+                           android:src="@drawable/pay"/>
+
+                <TextView android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:textSize="15sp"
+                          android:padding="5dp"
+                          android:textStyle="bold"
+                          android:text="Harga"/>
+
+            </LinearLayout>
+
+
+            <TextView
+                    android:id="@+id/homeprice"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:text="Rp.50.000"/>
+
+            <View android:layout_width="match_parent"
+                  android:layout_height="0.5dp"
+                  android:layout_marginTop="10dp"
+                  android:background="@android:color/darker_gray"
+                  android:layout_marginLeft="40dp"/>
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:orientation="horizontal">
+
+                <ImageView android:layout_width="25dp"
+                           android:layout_height="25dp"
+                           android:layout_marginTop="5dp"
+                           android:src="@drawable/time"/>
+
+                <TextView android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:textSize="15sp"
+                          android:padding="5dp"
+                          android:textStyle="bold"
+                          android:text="Estimasi Waktu"/>
+
+            </LinearLayout>
+
+            <TextView
+                    android:id="@+id/homeWaktudistance"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="3 menit"/>
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <Button
+            android:id="@+id/homebuttonnext"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Pesan"
+
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:background="@color/colorPrimary"/>
+
+
+</RelativeLayout>

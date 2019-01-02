@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".login.LoginActivity">
+
+    <EditText
+            android:id="@+id/loginUsername"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height"
+            android:layout_marginLeft="@dimen/height"
+            android:layout_marginRight="@dimen/height"
+            android:hint="@string/username"
+            android:layout_marginTop="140dp"
+            android:gravity="center"
+            android:textSize="@dimen/sizefont"
+            android:background="@drawable/background"
+    />
+    <EditText
+            android:id="@+id/loginPassword"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height"
+            android:layout_marginLeft="@dimen/height"
+            android:layout_marginRight="@dimen/height"
+            android:layout_marginTop="10dp"
+            android:textSize="@dimen/sizefont"
+            android:inputType="textPassword"
+            android:layout_below="@+id/loginUsername"
+            android:hint="@string/password"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:background="@drawable/background"
+    />
+
+    <Button
+            android:id="@+id/loginSignIn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height"
+            android:layout_marginRight="@dimen/height"
+            android:layout_marginLeft="@dimen/height"
+            android:layout_marginTop="10dp"
+            android:text="@string/sign_in"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:layout_below="@+id/loginPassword"
+            android:background="@drawable/background2"/>
+
+
+    <TextView
+            android:id="@+id/sigUplink"
+            android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:gravity="right"
+              android:layout_marginRight="40dp"
+              android:textSize="14sp"
+              android:layout_marginTop="10dp"
+              android:layout_below="@+id/loginSignIn"
+
+              android:text="Your Have account ? Sign Up"/>
+
+    <TextView
+            android:id="@+id/textOr"
+            android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="OR"
+              android:layout_below="@id/sigUplink"
+              android:layout_marginTop="20dp"
+              android:gravity="center"
+              android:textSize="20sp"
+
+    />
+
+    <Button
+            android:id="@+id/signUpbuttonGmail"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height"
+            android:layout_marginLeft="30dp"
+            android:text="Sign Up Google"
+            android:textAllCaps="false"
+            android:layout_below="@+id/textOr"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/background3"
+            android:layout_marginRight="30dp"/>
+
+</RelativeLayout>

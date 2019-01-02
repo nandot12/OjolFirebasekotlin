@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <TextView
+            android:id="@+id/itemTanggal"
+            android:layout_alignParentRight="true"
+            android:layout_width="match_parent"
+            android:gravity="right"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:text="BSD,Serpong,Tanggerang "/>
+
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:src="@drawable/titik2"
+            android:layout_height="100dp"/>
+
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="90dp">
+
+        <TextView
+                android:id="@+id/itemAwal"
+                android:layout_width="match_parent"
+                android:lines="2"
+                android:textColor="@color/colorPrimary"
+                  android:layout_height="60dp"
+                  android:layout_marginLeft="10dp"
+                  android:text="BSD,Serpong,Tanggerang "/>
+
+
+
+        <TextView
+                android:id="@+id/itemTujuan"
+                android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                 android:layout_above="@+id/idd"
+                android:lines="2"
+                  android:text="BSD,Serpong,Tanggerang "/>
+
+        <View
+                android:id="@+id/idd"
+                android:layout_width="match_parent"
+              android:layout_height="0.1dp"
+
+                android:layout_marginTop="5dp"
+              android:layout_alignParentBottom="true"
+              android:background="@android:color/darker_gray"/>
+    </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>
