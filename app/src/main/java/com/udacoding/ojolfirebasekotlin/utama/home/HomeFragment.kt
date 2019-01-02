@@ -97,6 +97,8 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
 
         visibleView(false)
 
+        keyy?.let { bookingHistoryUser(it) }
+
         homeAwal.onClick {
             takeLocation(1)
 
@@ -123,29 +125,24 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
 
     fun bookingHistoryUser(key: String) {
 
-
-        toast("hheiheiei")
-
-        showDialog(true)
+        if(key == null){
+            showDialog(false)
+        }
+        else showDialog(true)
 
 
         val database = FirebaseDatabase.getInstance()
         val myRef = database.getReference(Constan.tb_Booking)
 
 
-        myRef.child(key).addListenerForSingleValueEvent(object : ValueEventListener {
+        myRef.child(key).addValueEventListener(object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError?) {
             }
 
             override fun onDataChange(p0: DataSnapshot?) {
-
-
                 val booking = p0?.getValue(Booking::class.java)
-
-
-                toast(booking?.status.toString())
 //
-                if (booking?.status == 2) {
+                if (booking?.driver != "") {
                     startActivity<WaitingDriverActivity>(Constan.Key to key)
                     showDialog(false)
 
@@ -516,24 +513,13 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
 
 
     override fun onResume() {
+
+
+        keyy?.let { bookingHistoryUser(it) }
         mapView?.onResume()
         super.onResume()
-        val autoUpdate = Timer()
-
-        autoUpdate.schedule(object : TimerTask() {
-            override fun run() {
-                activity?.runOnUiThread(Runnable {
 
 
-
-                        keyy?.let { bookingHistoryUser(it) }
-
-                })
-
-
-            }
-
-        }, 1000)
     }
 
 

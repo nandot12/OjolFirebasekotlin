@@ -9,6 +9,6 @@ class RequestNotificaton {
     @SerializedName("to")
     var token: String? = null
 
-    @SerializedName("notification")
+    @SerializedName("data")
     var sendNotificationModel: Booking? = null
 }

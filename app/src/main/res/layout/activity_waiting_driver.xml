@@ -10,6 +10,8 @@
             android:layout_below="@+id/c"
             android:layout_above="@+id/homebottom"
             android:layout_width="match_parent"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+
             android:layout_height="match_parent"/>
 
     <android.support.v7.widget.CardView
@@ -78,7 +80,7 @@
 
     <android.support.v7.widget.CardView
             android:id="@+id/homebottom"
-            android:layout_above="@+id/homebuttonnext"
+            android:layout_above="@+id/homebuttonhome"
 
             android:layout_width="match_parent"
 
@@ -136,12 +138,12 @@
                           android:textSize="15sp"
                           android:padding="5dp"
                           android:textStyle="bold"
-                          android:text="Estimasi Waktu"/>
+                          android:text="Nama Driver"/>
 
             </LinearLayout>
 
             <TextView
-                    android:id="@+id/homeWaktudistance"
+                    android:id="@+id/homenameDriver"
 
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -155,11 +157,11 @@
     </android.support.v7.widget.CardView>
 
     <Button
-            android:id="@+id/homebuttonnext"
+            android:id="@+id/homebuttonhome"
             android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:text="Cancel"
+            android:text="Home"
 
             android:textAllCaps="false"
             android:textColor="@android:color/white"

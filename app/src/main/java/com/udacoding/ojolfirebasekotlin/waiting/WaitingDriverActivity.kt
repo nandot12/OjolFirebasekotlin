@@ -13,15 +13,18 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.udacoding.ojolfirebasekotlin.R
+import com.udacoding.ojolfirebasekotlin.utama.HomeActivity
 import com.udacoding.ojolfirebasekotlin.utama.home.model.Booking
 import com.udacoding.ojolfirebasekotlin.utils.Constan
 import kotlinx.android.synthetic.main.activity_waiting_driver.*
+import org.jetbrains.anko.sdk25.coroutines.onClick
+import org.jetbrains.anko.startActivity
 import java.sql.Driver
 
 class WaitingDriverActivity : AppCompatActivity(), OnMapReadyCallback {
 
     var key: String? = null
-    var database :FirebaseDatabase? = null
+    var database: FirebaseDatabase? = null
 
     private lateinit var mMap: GoogleMap
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,11 +32,6 @@ class WaitingDriverActivity : AppCompatActivity(), OnMapReadyCallback {
         setContentView(R.layout.activity_waiting_driver)
 
         key = intent.getStringExtra(Constan.Key)
-
-
-
-
-
 
 
         val mapFragment = supportFragmentManager
@@ -44,26 +42,30 @@ class WaitingDriverActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
+        homebuttonhome.onClick {
+
+            startActivity<HomeActivity>()
+        }
+
+
         // Add a marker in Sydney and move the camera
 
 
         database = FirebaseDatabase.getInstance()
         val myRef = database?.getReference(Constan.tb_Booking)
 
-        myRef?.child(key)?.addListenerForSingleValueEvent(object : ValueEventListener{
+        myRef?.child(key)?.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(p0: DataSnapshot?) {
 
-                for( issue in p0?.children!!){
 
-                    val booking = issue.getValue(Booking::class.java)
+
+                    val booking = p0?.getValue(Booking::class.java)
 
                     showData(booking)
-                }
+
             }
 
             override fun onCancelled(p0: DatabaseError?) {
-
-
 
 
             }
@@ -74,40 +76,32 @@ class WaitingDriverActivity : AppCompatActivity(), OnMapReadyCallback {
 
         homeAwal.text = booking?.lokasiAwal
         homeTujuan.text = booking?.lokasiTujuan
-        homeprice.text = booking?.harga + "( "+ booking?.jarak + ")"
+        homeprice.text = booking?.harga + "( " + booking?.jarak + ")"
 
-       val myref = database?.getReference("Driver")
+
+        val myref = database?.getReference("Driver")
 
         val query = myref?.orderByChild("uid")?.equalTo(booking?.driver)
-        query?.addListenerForSingleValueEvent(object  : ValueEventListener{
+        query?.addValueEventListener(object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError?) {
             }
 
             override fun onDataChange(p0: DataSnapshot?) {
-                for(issue in p0?.children!!){
+                for (issue in p0?.children!!) {
                     var driver = com.udacoding.ojolfirebasekotlin.waiting.model.Driver()
 
                     val d = issue.getValue(com.udacoding.ojolfirebasekotlin.waiting.model.Driver::class.java)
                     driver.latitude = d?.latitude
                     driver.longitude = d?.longitude
 
+                    homenameDriver.text = d?.name
+
                     showMarker(driver)
-
-
 
 
                 }
             }
         })
-
-
-
-
-
-
-
-
-
 
 
     }
@@ -116,7 +110,9 @@ class WaitingDriverActivity : AppCompatActivity(), OnMapReadyCallback {
 
         val sydney = driver.latitude?.toDouble()?.let { driver.longitude?.toDouble()?.let { it1 -> LatLng(it, it1) } }
         mMap.addMarker(sydney?.let { MarkerOptions().position(it).title(driver.name) })
+
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(sydney,16f))
 
 
     }
