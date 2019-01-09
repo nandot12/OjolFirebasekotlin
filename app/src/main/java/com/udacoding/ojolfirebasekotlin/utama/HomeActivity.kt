@@ -5,7 +5,7 @@ import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import com.udacoding.ojolfirebasekotlin.R
-import com.udacoding.ojolfirebasekotlin.profile.ProfileFragment
+import com.udacoding.ojolfirebasekotlin.utama.profile.ProfileFragment
 import com.udacoding.ojolfirebasekotlin.utama.history.HistoryFragment
 import com.udacoding.ojolfirebasekotlin.utama.home.HomeFragment
 import kotlinx.android.synthetic.main.activity_main.*

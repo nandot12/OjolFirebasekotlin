@@ -1,4 +1,4 @@
-package com.udacoding.ojolfirebasekotlin.profile
+package com.udacoding.ojolfirebasekotlin.utama.profile
 
 
 import android.os.Bundle
@@ -14,8 +14,6 @@ import com.google.firebase.database.ValueEventListener
 
 import com.udacoding.ojolfirebasekotlin.R
 import com.udacoding.ojolfirebasekotlin.login.LoginActivity
-import com.udacoding.ojolfirebasekotlin.signup.Users
-import com.udacoding.ojolfirebasekotlin.utama.home.model.Booking
 import com.udacoding.ojolfirebasekotlin.utils.Constan
 import kotlinx.android.synthetic.main.fragment_profile.*
 import org.jetbrains.anko.sdk25.coroutines.onClick

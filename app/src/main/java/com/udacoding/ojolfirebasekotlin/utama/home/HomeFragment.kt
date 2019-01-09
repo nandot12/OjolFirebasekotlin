@@ -24,7 +24,6 @@ import com.google.android.gms.location.places.ui.PlaceAutocomplete
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Geocoder
-import android.os.health.TimerStat
 import android.support.design.widget.Snackbar
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
@@ -36,13 +35,8 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.google.firebase.iid.FirebaseInstanceId
-import com.google.firebase.messaging.FirebaseMessaging
 import com.nandohusni.baggit.network.NetworkModule
-import com.udacoding.ojolfirebasekotlin.network.RequestNotificaton
 import com.udacoding.ojolfirebasekotlin.utama.home.model.Booking
-import com.udacoding.ojolfirebasekotlin.utama.home.model.ResultRoute
-import com.udacoding.ojolfirebasekotlin.utama.home.model.RoutesItem
 import com.udacoding.ojolfirebasekotlin.utils.ChangeFormat
 import com.udacoding.ojolfirebasekotlin.utils.Constan
 import com.udacoding.ojolfirebasekotlin.utils.DirectionMapsV2
@@ -52,7 +46,6 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import okhttp3.ResponseBody
 import org.jetbrains.anko.support.v4.startActivity
-import org.jetbrains.anko.support.v4.toast
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -321,10 +314,13 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
 
     private fun showGps() {
 
-        val gps = GPSTracker(context)
-        if (gps.canGetLocation()) {
+        val gps = context?.let { GPSTracker(it) }
+        if (gps?.canGetLocation()!!) {
             latAwal = gps.latitude
             lonAwal = gps.longitude
+
+
+            showMarker(latAwal ?: 0.0, lonAwal ?: 0.0,"My locations")
 
             val name = showName(latAwal ?: 0.0, lonAwal ?: 0.0)
 
